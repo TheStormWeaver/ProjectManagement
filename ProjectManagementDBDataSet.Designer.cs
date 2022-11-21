@@ -3508,11 +3508,17 @@ SELECT EXPRET_ID, EXPERT_TYPE, EXPERT_NAME, EXPERT_SURNAME, EXPERT_LASTNAME FROM
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT PSTATUS_ID, PSTATUS_NAME FROM dbo.PROJECT_STATUS";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = "SELECT PSTATUS_ID, PSTATUS_NAME FROM dbo.PROJECT_STATUS\r\nWHERE PSTATUS_ID= @PSTAT" +
+                "US_ID";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PSTATUS_ID", global::System.Data.SqlDbType.Decimal, 9, global::System.Data.ParameterDirection.Input, 18, 0, "PSTATUS_ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3534,6 +3540,32 @@ SELECT EXPRET_ID, EXPERT_TYPE, EXPERT_NAME, EXPERT_SURNAME, EXPERT_LASTNAME FROM
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
         public virtual ProjectManagementDBDataSet.PROJECT_STATUSDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
+            ProjectManagementDBDataSet.PROJECT_STATUSDataTable dataTable = new ProjectManagementDBDataSet.PROJECT_STATUSDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillByProjectStatusSearch(ProjectManagementDBDataSet.PROJECT_STATUSDataTable dataTable, decimal PSTATUS_ID) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((decimal)(PSTATUS_ID));
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual ProjectManagementDBDataSet.PROJECT_STATUSDataTable GetDataByProjectStatusSearch(decimal PSTATUS_ID) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((decimal)(PSTATUS_ID));
             ProjectManagementDBDataSet.PROJECT_STATUSDataTable dataTable = new ProjectManagementDBDataSet.PROJECT_STATUSDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
@@ -4440,12 +4472,53 @@ SELECT PROJECT_ID, PROJECT_NAME, PROJECT_DESCRIPTION, PROJECT_CLIENT, PROJECT_BE
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[7];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT PROJECT_ID, PROJECT_NAME, PROJECT_DESCRIPTION, PROJECT_CLIENT, PROJECT_BEG" +
                 "IN, PROJECT_END, PROJECT_STATUS, PROJECT_PAY_PER_HOUR FROM dbo.PROJECTS";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = "SELECT PROJECT_ID, PROJECT_NAME, PROJECT_DESCRIPTION, PROJECT_CLIENT, PROJECT_BEG" +
+                "IN, PROJECT_END, PROJECT_STATUS, PROJECT_PAY_PER_HOUR FROM dbo.PROJECTS";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[2].Connection = this.Connection;
+            this._commandCollection[2].CommandText = "SELECT PROJECT_ID, PROJECT_NAME, PROJECT_DESCRIPTION, PROJECT_CLIENT, PROJECT_BEG" +
+                "IN, PROJECT_END, PROJECT_STATUS, PROJECT_PAY_PER_HOUR FROM dbo.PROJECTS\r\nWHERE (" +
+                "PROJECT_CLIENT = @PROJECT_CLIENT)";
+            this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PROJECT_CLIENT", global::System.Data.SqlDbType.VarChar, 100, global::System.Data.ParameterDirection.Input, 0, 0, "PROJECT_CLIENT", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[3].Connection = this.Connection;
+            this._commandCollection[3].CommandText = "SELECT PROJECT_ID, PROJECT_NAME, PROJECT_DESCRIPTION, PROJECT_CLIENT, PROJECT_BEG" +
+                "IN, PROJECT_END, PROJECT_STATUS, PROJECT_PAY_PER_HOUR FROM dbo.PROJECTS\r\nWHERE P" +
+                "ROJECT_END = @PROJECT_END AND PROJECT_BEGIN = @PROJECT_BEGIN";
+            this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PROJECT_END", global::System.Data.SqlDbType.Date, 3, global::System.Data.ParameterDirection.Input, 0, 0, "PROJECT_END", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PROJECT_BEGIN", global::System.Data.SqlDbType.Date, 3, global::System.Data.ParameterDirection.Input, 0, 0, "PROJECT_BEGIN", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[4] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[4].Connection = this.Connection;
+            this._commandCollection[4].CommandText = "SELECT PROJECT_ID, PROJECT_NAME, PROJECT_DESCRIPTION, PROJECT_CLIENT, PROJECT_BEG" +
+                "IN, PROJECT_END, PROJECT_STATUS, PROJECT_PAY_PER_HOUR FROM dbo.PROJECTS\r\nWHERE (" +
+                "PROJECT_ID = @PROJECT_ID)";
+            this._commandCollection[4].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PROJECT_ID", global::System.Data.SqlDbType.Decimal, 9, global::System.Data.ParameterDirection.Input, 18, 0, "PROJECT_ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[5] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[5].Connection = this.Connection;
+            this._commandCollection[5].CommandText = "SELECT        PROJECT_ID, PROJECT_NAME, PROJECT_DESCRIPTION, PROJECT_CLIENT, PROJ" +
+                "ECT_BEGIN, PROJECT_END, PROJECT_STATUS, PROJECT_PAY_PER_HOUR\r\nFROM            PR" +
+                "OJECTS\r\nWHERE        (PROJECT_NAME LIKE \'%\' + @PROJECT_NAME + \'%\')";
+            this._commandCollection[5].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PROJECT_NAME", global::System.Data.SqlDbType.VarChar, 100, global::System.Data.ParameterDirection.Input, 0, 0, "PROJECT_NAME", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[6] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[6].Connection = this.Connection;
+            this._commandCollection[6].CommandText = "SELECT PROJECT_ID, PROJECT_NAME, PROJECT_DESCRIPTION, PROJECT_CLIENT, PROJECT_BEG" +
+                "IN, PROJECT_END, PROJECT_STATUS, PROJECT_PAY_PER_HOUR FROM dbo.PROJECTS\r\nWHERE P" +
+                "ROJECT_STATUS = @PROJECT_STATUS";
+            this._commandCollection[6].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[6].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PROJECT_STATUS", global::System.Data.SqlDbType.Decimal, 9, global::System.Data.ParameterDirection.Input, 18, 0, "PROJECT_STATUS", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4467,6 +4540,191 @@ SELECT PROJECT_ID, PROJECT_NAME, PROJECT_DESCRIPTION, PROJECT_CLIENT, PROJECT_BE
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
         public virtual ProjectManagementDBDataSet.PROJECTSDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
+            ProjectManagementDBDataSet.PROJECTSDataTable dataTable = new ProjectManagementDBDataSet.PROJECTSDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillBy(ProjectManagementDBDataSet.PROJECTSDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillByPorjectClientSearch(ProjectManagementDBDataSet.PROJECTSDataTable dataTable, string PROJECT_CLIENT) {
+            this.Adapter.SelectCommand = this.CommandCollection[2];
+            if ((PROJECT_CLIENT == null)) {
+                throw new global::System.ArgumentNullException("PROJECT_CLIENT");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(PROJECT_CLIENT));
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual ProjectManagementDBDataSet.PROJECTSDataTable GetDataByPorjectClientSearch(string PROJECT_CLIENT) {
+            this.Adapter.SelectCommand = this.CommandCollection[2];
+            if ((PROJECT_CLIENT == null)) {
+                throw new global::System.ArgumentNullException("PROJECT_CLIENT");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(PROJECT_CLIENT));
+            }
+            ProjectManagementDBDataSet.PROJECTSDataTable dataTable = new ProjectManagementDBDataSet.PROJECTSDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillByProjectDateSearch(ProjectManagementDBDataSet.PROJECTSDataTable dataTable, string PROJECT_END, string PROJECT_BEGIN) {
+            this.Adapter.SelectCommand = this.CommandCollection[3];
+            if ((PROJECT_END == null)) {
+                throw new global::System.ArgumentNullException("PROJECT_END");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(PROJECT_END));
+            }
+            if ((PROJECT_BEGIN == null)) {
+                throw new global::System.ArgumentNullException("PROJECT_BEGIN");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((string)(PROJECT_BEGIN));
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual ProjectManagementDBDataSet.PROJECTSDataTable GetDataByProjectDateSearch(string PROJECT_END, string PROJECT_BEGIN) {
+            this.Adapter.SelectCommand = this.CommandCollection[3];
+            if ((PROJECT_END == null)) {
+                throw new global::System.ArgumentNullException("PROJECT_END");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(PROJECT_END));
+            }
+            if ((PROJECT_BEGIN == null)) {
+                throw new global::System.ArgumentNullException("PROJECT_BEGIN");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((string)(PROJECT_BEGIN));
+            }
+            ProjectManagementDBDataSet.PROJECTSDataTable dataTable = new ProjectManagementDBDataSet.PROJECTSDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillByProjectIDSearch(ProjectManagementDBDataSet.PROJECTSDataTable dataTable, decimal PROJECT_ID) {
+            this.Adapter.SelectCommand = this.CommandCollection[4];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((decimal)(PROJECT_ID));
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual ProjectManagementDBDataSet.PROJECTSDataTable GetDataByProjectIDSearch(decimal PROJECT_ID) {
+            this.Adapter.SelectCommand = this.CommandCollection[4];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((decimal)(PROJECT_ID));
+            ProjectManagementDBDataSet.PROJECTSDataTable dataTable = new ProjectManagementDBDataSet.PROJECTSDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillByProjectNameSearch(ProjectManagementDBDataSet.PROJECTSDataTable dataTable, string PROJECT_NAME) {
+            this.Adapter.SelectCommand = this.CommandCollection[5];
+            if ((PROJECT_NAME == null)) {
+                throw new global::System.ArgumentNullException("PROJECT_NAME");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(PROJECT_NAME));
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual ProjectManagementDBDataSet.PROJECTSDataTable GetDataByProjectNameSearch(string PROJECT_NAME) {
+            this.Adapter.SelectCommand = this.CommandCollection[5];
+            if ((PROJECT_NAME == null)) {
+                throw new global::System.ArgumentNullException("PROJECT_NAME");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(PROJECT_NAME));
+            }
+            ProjectManagementDBDataSet.PROJECTSDataTable dataTable = new ProjectManagementDBDataSet.PROJECTSDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillByProjectStatusSearch(ProjectManagementDBDataSet.PROJECTSDataTable dataTable, decimal PROJECT_STATUS) {
+            this.Adapter.SelectCommand = this.CommandCollection[6];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((decimal)(PROJECT_STATUS));
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual ProjectManagementDBDataSet.PROJECTSDataTable GetDataByProjectStatusSearch(decimal PROJECT_STATUS) {
+            this.Adapter.SelectCommand = this.CommandCollection[6];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((decimal)(PROJECT_STATUS));
             ProjectManagementDBDataSet.PROJECTSDataTable dataTable = new ProjectManagementDBDataSet.PROJECTSDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;

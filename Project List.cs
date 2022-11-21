@@ -23,5 +23,43 @@ namespace ProjectManagement
             this.pROJECTSTableAdapter.Fill(this.projectManagementDBDataSet.PROJECTS);
 
         }
+
+        private void searchProjectbtn_Click(object sender, EventArgs e)
+        {
+            this.pROJECTSTableAdapter.FillByProjectIDSearch(this.projectManagementDBDataSet.PROJECTS, Convert.ToDecimal(projectIDSearcht.Text));
+            this.pROJECTSTableAdapter.FillByProjectDateSearch(this.projectManagementDBDataSet.PROJECTS, projectStartDateSearcht.Text, projectEndDateSearcht.Text);
+            this.pROJECTSTableAdapter.FillByPorjectClientSearch(this.projectManagementDBDataSet.PROJECTS, projectUserSearchcb.Text);
+            this.pROJECTSTableAdapter.FillByProjectNameSearch(this.projectManagementDBDataSet.PROJECTS, projectNameSearcht.Text);
+            this.pROJECTSTableAdapter.FillByProjectStatusSearch(this.projectManagementDBDataSet.PROJECTS, Convert.ToDecimal(projectStatusSearchcb.Text));
+        }
+
+        private void projectListGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex >= 0 && projectListGrid.Columns[e.ColumnIndex].Name.Equals("editProjectStatus"))
+            {
+                Edit_Project_Status frm = new Edit_Project_Status(true,
+               Convert.ToInt32(projectListGrid.CurrentRow.Cells[0].Value));
+
+            }
+
+        }
+
+        private void fillByToolStripButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.pROJECTSTableAdapter.FillBy(this.projectManagementDBDataSet.PROJECTS);
+            }
+            catch (System.Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex.Message);
+            }
+
+        }
+
+        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

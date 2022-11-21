@@ -40,7 +40,10 @@
             this.tasksToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.viewTasksToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editTaskToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.createTaskToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.infoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.loginToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.logoutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -71,6 +74,7 @@
             this.viewUsersToolStripMenuItem.Name = "viewUsersToolStripMenuItem";
             this.viewUsersToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
             this.viewUsersToolStripMenuItem.Text = "View Users";
+            this.viewUsersToolStripMenuItem.Click += new System.EventHandler(this.viewUsersToolStripMenuItem_Click);
             // 
             // createUserToolStripMenuItem
             // 
@@ -101,12 +105,14 @@
             this.viewProjectsToolStripMenuItem.Name = "viewProjectsToolStripMenuItem";
             this.viewProjectsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.viewProjectsToolStripMenuItem.Text = "View Projects";
+            this.viewProjectsToolStripMenuItem.Click += new System.EventHandler(this.viewProjectsToolStripMenuItem_Click);
             // 
             // createProjectToolStripMenuItem
             // 
             this.createProjectToolStripMenuItem.Name = "createProjectToolStripMenuItem";
             this.createProjectToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.createProjectToolStripMenuItem.Text = "Create Project";
+            this.createProjectToolStripMenuItem.Click += new System.EventHandler(this.createProjectToolStripMenuItem_Click);
             // 
             // editProjectStatusToolStripMenuItem
             // 
@@ -118,6 +124,7 @@
             // 
             this.tasksToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.viewTasksToolStripMenuItem,
+            this.createTaskToolStripMenuItem1,
             this.editTaskToolStripMenuItem});
             this.tasksToolStripMenuItem1.Name = "tasksToolStripMenuItem1";
             this.tasksToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
@@ -128,6 +135,7 @@
             this.viewTasksToolStripMenuItem.Name = "viewTasksToolStripMenuItem";
             this.viewTasksToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.viewTasksToolStripMenuItem.Text = "View Tasks";
+            this.viewTasksToolStripMenuItem.Click += new System.EventHandler(this.viewTasksToolStripMenuItem_Click);
             // 
             // editTaskToolStripMenuItem
             // 
@@ -135,11 +143,33 @@
             this.editTaskToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.editTaskToolStripMenuItem.Text = "Edit Task";
             // 
+            // createTaskToolStripMenuItem1
+            // 
+            this.createTaskToolStripMenuItem1.Name = "createTaskToolStripMenuItem1";
+            this.createTaskToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.createTaskToolStripMenuItem1.Text = "Create Task";
+            this.createTaskToolStripMenuItem1.Click += new System.EventHandler(this.editTaskToolStripMenuItem1_Click);
+            // 
             // infoToolStripMenuItem
             // 
+            this.infoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.loginToolStripMenuItem,
+            this.logoutToolStripMenuItem});
             this.infoToolStripMenuItem.Name = "infoToolStripMenuItem";
-            this.infoToolStripMenuItem.Size = new System.Drawing.Size(40, 20);
-            this.infoToolStripMenuItem.Text = "Info";
+            this.infoToolStripMenuItem.Size = new System.Drawing.Size(98, 20);
+            this.infoToolStripMenuItem.Text = "Authentication";
+            // 
+            // loginToolStripMenuItem
+            // 
+            this.loginToolStripMenuItem.Name = "loginToolStripMenuItem";
+            this.loginToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
+            this.loginToolStripMenuItem.Text = "Login";
+            // 
+            // logoutToolStripMenuItem
+            // 
+            this.logoutToolStripMenuItem.Name = "logoutToolStripMenuItem";
+            this.logoutToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
+            this.logoutToolStripMenuItem.Text = "Logout";
             // 
             // menu
             // 
@@ -172,6 +202,9 @@
         private System.Windows.Forms.ToolStripMenuItem tasksToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem viewTasksToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem editTaskToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem createTaskToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem loginToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem logoutToolStripMenuItem;
     }
 }
 

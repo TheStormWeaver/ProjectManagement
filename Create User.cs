@@ -10,11 +10,31 @@ using System.Windows.Forms;
 
 namespace ProjectManagement
 {
-    public partial class Create_User : Form
+    public partial class User : Form
     {
-        public Create_User()
+        public User()
         {
             InitializeComponent();
+        }
+
+        private void typecb_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void typel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lastnamet_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lastnamel_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AskIDForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AskIDForm.Designer.cs">
+      <DependentUpon>AskIDForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Create Project.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -58,11 +64,11 @@
     <Compile Include="Create Task.Designer.cs">
       <DependentUpon>Create Task.cs</DependentUpon>
     </Compile>
-    <Compile Include="Create User.cs">
+    <Compile Include="Edit Project Status.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Create User.Designer.cs">
-      <DependentUpon>Create User.cs</DependentUpon>
+    <Compile Include="Edit Project Status.Designer.cs">
+      <DependentUpon>Edit Project Status.cs</DependentUpon>
     </Compile>
     <Compile Include="Menu.cs">
       <SubType>Form</SubType>
@@ -77,11 +83,8 @@
     <Compile Include="Project List.Designer.cs">
       <DependentUpon>Project List.cs</DependentUpon>
     </Compile>
-    <Compile Include="Project.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Project.Designer.cs">
-      <DependentUpon>Project.cs</DependentUpon>
+    <Compile Include="ProjectManagementDBDataSet.cs">
+      <DependentUpon>ProjectManagementDBDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="ProjectManagementDBDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -95,41 +98,35 @@
     <Compile Include="Task List.Designer.cs">
       <DependentUpon>Task List.cs</DependentUpon>
     </Compile>
-    <Compile Include="Tasks.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Tasks.Designer.cs">
-      <DependentUpon>Tasks.cs</DependentUpon>
-    </Compile>
     <Compile Include="User List.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="User List.Designer.cs">
       <DependentUpon>User List.cs</DependentUpon>
     </Compile>
-    <Compile Include="User.cs">
+    <Compile Include="Create User.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="User.Designer.cs">
-      <DependentUpon>User.cs</DependentUpon>
+    <Compile Include="Create User.Designer.cs">
+      <DependentUpon>Create User.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AskIDForm.resx">
+      <DependentUpon>AskIDForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Create Project.resx">
       <DependentUpon>Create Project.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Create Task.resx">
       <DependentUpon>Create Task.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Create User.resx">
-      <DependentUpon>Create User.cs</DependentUpon>
+    <EmbeddedResource Include="Edit Project Status.resx">
+      <DependentUpon>Edit Project Status.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Menu.resx">
       <DependentUpon>Menu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Project List.resx">
       <DependentUpon>Project List.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Project.resx">
-      <DependentUpon>Project.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -146,8 +143,8 @@
     <EmbeddedResource Include="User List.resx">
       <DependentUpon>User List.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="User.resx">
-      <DependentUpon>User.cs</DependentUpon>
+    <EmbeddedResource Include="Create User.resx">
+      <DependentUpon>Create User.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="ProjectManagementDBDataSet.xsc">
       <DependentUpon>ProjectManagementDBDataSet.xsd</DependentUpon>

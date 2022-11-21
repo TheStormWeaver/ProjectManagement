@@ -19,8 +19,17 @@ namespace ProjectManagement
 
         private void User_List_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'projectManagementDBDataSet.PROJECT_TASKS' table. You can move, or remove it, as needed.
+            this.pROJECT_TASKSTableAdapter.Fill(this.projectManagementDBDataSet.PROJECT_TASKS);
+            // TODO: This line of code loads data into the 'projectManagementDBDataSet.PROJECTS' table. You can move, or remove it, as needed.
+            this.pROJECTSTableAdapter.Fill(this.projectManagementDBDataSet.PROJECTS);
             // TODO: This line of code loads data into the 'projectManagementDBDataSet.EXPERTS' table. You can move, or remove it, as needed.
             this.eXPERTSTableAdapter.Fill(this.projectManagementDBDataSet.EXPERTS);
+
+        }
+
+        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
 
         }
     }
