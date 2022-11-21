@@ -26,19 +26,28 @@ namespace ProjectManagement
         private void viewUsersToolStripMenuItem_Click(object sender, EventArgs e)
         {
             User_List frm = new User_List();
-            frm.ShowDialog();
+            frm.TopLevel = false;
+            this.Controls.Add(frm);
+            frm.SetBounds(10, 30, 850, 280);
+            frm.Show();
         }
 
         private void viewTasksToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Task_List frm = new Task_List();
-            frm.ShowDialog();
+            frm.TopLevel = false;
+            this.Controls.Add(frm);
+            frm.SetBounds(10, 30, 1400, 420);
+            frm.Show();
         }
 
         private void viewProjectsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Project_List frm = new Project_List();
-            frm.ShowDialog();
+            frm.TopLevel = false;
+            this.Controls.Add(frm);
+            frm.SetBounds(10, 30, 1520, 330);
+            frm.Show();
         }
 
         private void createProjectToolStripMenuItem_Click(object sender, EventArgs e)
@@ -51,6 +60,38 @@ namespace ProjectManagement
         {
             Create_Task frm2 = new Create_Task();
             frm2.ShowDialog();
+        }
+
+        private void tasksToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void usersToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            User_List frm = new User_List();
+            frm.TopLevel = false;
+            this.Controls.Add(frm);
+            frm.SetBounds(10, 30, 930, 320);
+            frm.Show();
+        }
+
+        private void tasksToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Project_List frm = new Project_List();
+            frm.TopLevel = false;
+            this.Controls.Add(frm);
+            frm.SetBounds(10, 30, 1400, 390);
+            frm.Show();
+        }
+
+        private void tasksToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            Task_List frm = new Task_List();
+            frm.TopLevel = false;
+            this.Controls.Add(frm);
+            frm.SetBounds(10, 30, 1520, 410);
+            frm.Show();
         }
     }
 }

@@ -32,5 +32,11 @@ namespace ProjectManagement
         {
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            User frm = new User();
+            frm.ShowDialog();
+        }
     }
 }

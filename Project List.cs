@@ -19,6 +19,8 @@ namespace ProjectManagement
 
         private void Project_List_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'projectManagementDBDataSet.EXPERTS' table. You can move, or remove it, as needed.
+            this.eXPERTSTableAdapter.Fill(this.projectManagementDBDataSet.EXPERTS);
             // TODO: This line of code loads data into the 'projectManagementDBDataSet.PROJECTS' table. You can move, or remove it, as needed.
             this.pROJECTSTableAdapter.Fill(this.projectManagementDBDataSet.PROJECTS);
 
@@ -60,6 +62,12 @@ namespace ProjectManagement
         private void listView1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Create_Project frm = new Create_Project();
+            frm.ShowDialog();
         }
     }
 }

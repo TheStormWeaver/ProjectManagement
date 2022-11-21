@@ -98,6 +98,12 @@
     <Compile Include="Task List.Designer.cs">
       <DependentUpon>Task List.cs</DependentUpon>
     </Compile>
+    <Compile Include="User Details.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="User Details.Designer.cs">
+      <DependentUpon>User Details.cs</DependentUpon>
+    </Compile>
     <Compile Include="User List.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -139,6 +145,9 @@
     </Compile>
     <EmbeddedResource Include="Task List.resx">
       <DependentUpon>Task List.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User Details.resx">
+      <DependentUpon>User Details.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="User List.resx">
       <DependentUpon>User List.cs</DependentUpon>

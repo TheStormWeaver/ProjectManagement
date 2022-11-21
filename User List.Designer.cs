@@ -49,17 +49,22 @@
             this.lastnamel = new System.Windows.Forms.Label();
             this.surnamel = new System.Windows.Forms.Label();
             this.lastnamet = new System.Windows.Forms.TextBox();
-            this.listView1 = new System.Windows.Forms.ListView();
             this.pROJECTSBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.pROJECTSTableAdapter = new ProjectManagement.ProjectManagementDBDataSetTableAdapters.PROJECTSTableAdapter();
             this.pROJECT_TASKSBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.pROJECT_TASKSTableAdapter = new ProjectManagement.ProjectManagementDBDataSetTableAdapters.PROJECT_TASKSTableAdapter();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.userListGrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.eXPERTSBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.projectManagementDBDataSet)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pROJECTSBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pROJECT_TASKSBindingSource)).BeginInit();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // userListGrid
@@ -75,7 +80,7 @@
             this.userListGrid.DataSource = this.eXPERTSBindingSource;
             this.userListGrid.Location = new System.Drawing.Point(12, 20);
             this.userListGrid.Name = "userListGrid";
-            this.userListGrid.Size = new System.Drawing.Size(445, 189);
+            this.userListGrid.Size = new System.Drawing.Size(445, 305);
             this.userListGrid.TabIndex = 0;
             // 
             // eXPRETIDDataGridViewTextBoxColumn
@@ -144,9 +149,9 @@
             this.groupBox1.Controls.Add(this.lastnamel);
             this.groupBox1.Controls.Add(this.surnamel);
             this.groupBox1.Controls.Add(this.lastnamet);
-            this.groupBox1.Location = new System.Drawing.Point(482, 12);
+            this.groupBox1.Location = new System.Drawing.Point(481, 147);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(361, 199);
+            this.groupBox1.Size = new System.Drawing.Size(293, 178);
             this.groupBox1.TabIndex = 12;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Search Users";
@@ -156,26 +161,26 @@
             this.searchProjectbtn.BackColor = System.Drawing.Color.Transparent;
             this.searchProjectbtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.searchProjectbtn.ForeColor = System.Drawing.Color.Black;
-            this.searchProjectbtn.Location = new System.Drawing.Point(26, 153);
+            this.searchProjectbtn.Location = new System.Drawing.Point(26, 136);
             this.searchProjectbtn.Name = "searchProjectbtn";
-            this.searchProjectbtn.Size = new System.Drawing.Size(114, 29);
+            this.searchProjectbtn.Size = new System.Drawing.Size(103, 27);
             this.searchProjectbtn.TabIndex = 13;
-            this.searchProjectbtn.Text = "Search Users";
+            this.searchProjectbtn.Text = "Search For Users";
             this.searchProjectbtn.UseVisualStyleBackColor = false;
             // 
             // firstnamet
             // 
             this.firstnamet.Location = new System.Drawing.Point(26, 46);
             this.firstnamet.Name = "firstnamet";
-            this.firstnamet.Size = new System.Drawing.Size(86, 20);
+            this.firstnamet.Size = new System.Drawing.Size(103, 20);
             this.firstnamet.TabIndex = 2;
             // 
             // typecb
             // 
             this.typecb.FormattingEnabled = true;
-            this.typecb.Location = new System.Drawing.Point(26, 106);
+            this.typecb.Location = new System.Drawing.Point(164, 98);
             this.typecb.Name = "typecb";
-            this.typecb.Size = new System.Drawing.Size(86, 21);
+            this.typecb.Size = new System.Drawing.Size(103, 21);
             this.typecb.TabIndex = 10;
             // 
             // firstnamel
@@ -190,7 +195,7 @@
             // typel
             // 
             this.typel.AutoSize = true;
-            this.typel.Location = new System.Drawing.Point(23, 85);
+            this.typel.Location = new System.Drawing.Point(161, 78);
             this.typel.Name = "typel";
             this.typel.Size = new System.Drawing.Size(31, 13);
             this.typel.TabIndex = 9;
@@ -198,15 +203,15 @@
             // 
             // surnamet
             // 
-            this.surnamet.Location = new System.Drawing.Point(131, 45);
+            this.surnamet.Location = new System.Drawing.Point(164, 45);
             this.surnamet.Name = "surnamet";
-            this.surnamet.Size = new System.Drawing.Size(77, 20);
+            this.surnamet.Size = new System.Drawing.Size(103, 20);
             this.surnamet.TabIndex = 4;
             // 
             // lastnamel
             // 
             this.lastnamel.AutoSize = true;
-            this.lastnamel.Location = new System.Drawing.Point(232, 27);
+            this.lastnamel.Location = new System.Drawing.Point(23, 78);
             this.lastnamel.Name = "lastnamel";
             this.lastnamel.Size = new System.Drawing.Size(53, 13);
             this.lastnamel.TabIndex = 7;
@@ -215,7 +220,7 @@
             // surnamel
             // 
             this.surnamel.AutoSize = true;
-            this.surnamel.Location = new System.Drawing.Point(128, 24);
+            this.surnamel.Location = new System.Drawing.Point(161, 27);
             this.surnamel.Name = "surnamel";
             this.surnamel.Size = new System.Drawing.Size(49, 13);
             this.surnamel.TabIndex = 5;
@@ -223,20 +228,10 @@
             // 
             // lastnamet
             // 
-            this.lastnamet.Location = new System.Drawing.Point(235, 45);
+            this.lastnamet.Location = new System.Drawing.Point(26, 97);
             this.lastnamet.Name = "lastnamet";
-            this.lastnamet.Size = new System.Drawing.Size(78, 20);
+            this.lastnamet.Size = new System.Drawing.Size(103, 20);
             this.lastnamet.TabIndex = 6;
-            // 
-            // listView1
-            // 
-            this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(13, 243);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(444, 97);
-            this.listView1.TabIndex = 13;
-            this.listView1.UseCompatibleStateImageBehavior = false;
-            this.listView1.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged);
             // 
             // pROJECTSBindingSource
             // 
@@ -256,12 +251,61 @@
             // 
             this.pROJECT_TASKSTableAdapter.ClearBeforeFill = true;
             // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.button4);
+            this.groupBox2.Controls.Add(this.button1);
+            this.groupBox2.Controls.Add(this.button3);
+            this.groupBox2.Controls.Add(this.button2);
+            this.groupBox2.Location = new System.Drawing.Point(481, 20);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(293, 114);
+            this.groupBox2.TabIndex = 22;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Configure Users";
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(164, 29);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(103, 23);
+            this.button4.TabIndex = 21;
+            this.button4.Text = "User Details";
+            this.button4.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(26, 29);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(103, 23);
+            this.button1.TabIndex = 18;
+            this.button1.Text = "Create Users";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(164, 74);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(103, 23);
+            this.button3.TabIndex = 20;
+            this.button3.Text = "Delete Users";
+            this.button3.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(26, 74);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(103, 23);
+            this.button2.TabIndex = 19;
+            this.button2.Text = "Edit Users";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
             // User_List
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(915, 549);
-            this.Controls.Add(this.listView1);
+            this.ClientSize = new System.Drawing.Size(797, 351);
+            this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.userListGrid);
             this.Name = "User_List";
@@ -274,6 +318,7 @@
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pROJECTSBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pROJECT_TASKSBindingSource)).EndInit();
+            this.groupBox2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -300,10 +345,14 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn eXPERTSURNAMEDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn eXPERTLASTNAMEDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn eXPERTTYPEDataGridViewTextBoxColumn;
-        private System.Windows.Forms.ListView listView1;
         private System.Windows.Forms.BindingSource pROJECTSBindingSource;
         private ProjectManagementDBDataSetTableAdapters.PROJECTSTableAdapter pROJECTSTableAdapter;
         private System.Windows.Forms.BindingSource pROJECT_TASKSBindingSource;
         private ProjectManagementDBDataSetTableAdapters.PROJECT_TASKSTableAdapter pROJECT_TASKSTableAdapter;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button2;
     }
 }
