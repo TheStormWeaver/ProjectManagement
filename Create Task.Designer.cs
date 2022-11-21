@@ -87,7 +87,7 @@
             // taskResultl
             // 
             this.taskResultl.AutoSize = true;
-            this.taskResultl.Location = new System.Drawing.Point(26, 280);
+            this.taskResultl.Location = new System.Drawing.Point(26, 273);
             this.taskResultl.Name = "taskResultl";
             this.taskResultl.Size = new System.Drawing.Size(120, 13);
             this.taskResultl.TabIndex = 6;
@@ -96,7 +96,7 @@
             // taskResultcb
             // 
             this.taskResultcb.FormattingEnabled = true;
-            this.taskResultcb.Location = new System.Drawing.Point(29, 305);
+            this.taskResultcb.Location = new System.Drawing.Point(29, 298);
             this.taskResultcb.Name = "taskResultcb";
             this.taskResultcb.Size = new System.Drawing.Size(260, 21);
             this.taskResultcb.TabIndex = 7;
@@ -104,7 +104,7 @@
             // taskTimel
             // 
             this.taskTimel.AutoSize = true;
-            this.taskTimel.Location = new System.Drawing.Point(28, 349);
+            this.taskTimel.Location = new System.Drawing.Point(28, 335);
             this.taskTimel.Name = "taskTimel";
             this.taskTimel.Size = new System.Drawing.Size(72, 13);
             this.taskTimel.TabIndex = 8;
@@ -112,7 +112,7 @@
             // 
             // taskTimedt
             // 
-            this.taskTimedt.Location = new System.Drawing.Point(31, 370);
+            this.taskTimedt.Location = new System.Drawing.Point(31, 356);
             this.taskTimedt.Name = "taskTimedt";
             this.taskTimedt.Size = new System.Drawing.Size(111, 20);
             this.taskTimedt.TabIndex = 10;
@@ -154,7 +154,7 @@
             // taskProgressl
             // 
             this.taskProgressl.AutoSize = true;
-            this.taskProgressl.Location = new System.Drawing.Point(28, 415);
+            this.taskProgressl.Location = new System.Drawing.Point(29, 393);
             this.taskProgressl.Name = "taskProgressl";
             this.taskProgressl.Size = new System.Drawing.Size(75, 13);
             this.taskProgressl.TabIndex = 15;
@@ -162,14 +162,14 @@
             // 
             // taskProgresst
             // 
-            this.taskProgresst.Location = new System.Drawing.Point(31, 441);
+            this.taskProgresst.Location = new System.Drawing.Point(32, 419);
             this.taskProgresst.Name = "taskProgresst";
             this.taskProgresst.Size = new System.Drawing.Size(111, 20);
             this.taskProgresst.TabIndex = 16;
             // 
             // taskHourst
             // 
-            this.taskHourst.Location = new System.Drawing.Point(183, 370);
+            this.taskHourst.Location = new System.Drawing.Point(183, 356);
             this.taskHourst.Name = "taskHourst";
             this.taskHourst.Size = new System.Drawing.Size(106, 20);
             this.taskHourst.TabIndex = 18;
@@ -177,7 +177,7 @@
             // taskHoursl
             // 
             this.taskHoursl.AutoSize = true;
-            this.taskHoursl.Location = new System.Drawing.Point(180, 349);
+            this.taskHoursl.Location = new System.Drawing.Point(180, 335);
             this.taskHoursl.Name = "taskHoursl";
             this.taskHoursl.Size = new System.Drawing.Size(78, 13);
             this.taskHoursl.TabIndex = 17;
@@ -186,7 +186,7 @@
             // 
             // taskCommentrt
             // 
-            this.taskCommentrt.Location = new System.Drawing.Point(29, 507);
+            this.taskCommentrt.Location = new System.Drawing.Point(29, 485);
             this.taskCommentrt.Name = "taskCommentrt";
             this.taskCommentrt.Size = new System.Drawing.Size(260, 96);
             this.taskCommentrt.TabIndex = 20;
@@ -195,7 +195,7 @@
             // taskCommentl
             // 
             this.taskCommentl.AutoSize = true;
-            this.taskCommentl.Location = new System.Drawing.Point(26, 482);
+            this.taskCommentl.Location = new System.Drawing.Point(26, 460);
             this.taskCommentl.Name = "taskCommentl";
             this.taskCommentl.Size = new System.Drawing.Size(78, 13);
             this.taskCommentl.TabIndex = 19;
@@ -223,14 +223,14 @@
             this.groupBox1.Controls.Add(this.taskStatusl);
             this.groupBox1.Location = new System.Drawing.Point(40, 18);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(325, 626);
+            this.groupBox1.Size = new System.Drawing.Size(325, 600);
             this.groupBox1.TabIndex = 21;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Task Creation";
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(40, 661);
+            this.button1.Location = new System.Drawing.Point(40, 630);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(98, 23);
             this.button1.TabIndex = 24;
@@ -241,7 +241,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(414, 702);
+            this.ClientSize = new System.Drawing.Size(414, 665);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.groupBox1);
             this.Name = "Create_Task";

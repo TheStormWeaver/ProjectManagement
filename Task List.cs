@@ -23,5 +23,11 @@ namespace ProjectManagement
             this.pROJECT_TASKSTableAdapter.Fill(this.projectManagementDBDataSet.PROJECT_TASKS);
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Create_Task frm = new Create_Task();
+            frm.ShowDialog();
+        }
     }
 }

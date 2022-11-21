@@ -120,16 +120,16 @@
             this.groupBox1.Controls.Add(this.lastnamel);
             this.groupBox1.Controls.Add(this.surnamel);
             this.groupBox1.Controls.Add(this.lastnamet);
-            this.groupBox1.Location = new System.Drawing.Point(33, 12);
+            this.groupBox1.Location = new System.Drawing.Point(23, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(361, 148);
+            this.groupBox1.Size = new System.Drawing.Size(348, 148);
             this.groupBox1.TabIndex = 11;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "User Creation";
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(33, 176);
+            this.button1.Location = new System.Drawing.Point(23, 177);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(98, 23);
             this.button1.TabIndex = 24;
@@ -140,7 +140,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(419, 221);
+            this.ClientSize = new System.Drawing.Size(406, 221);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.groupBox1);
             this.Name = "User";
